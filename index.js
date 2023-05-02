@@ -30,7 +30,9 @@ app.get('/bands', (req,res)=>{
 // Get single band based on url / id 
 app.get ('/bands/:id',(req,res) => {
     // Get the url id
+    
     const id = req.params.id;
+    console.log (req);
     let statement = db.prepare('SELECT * FROM bands WHERE id= :id');
     let result = statement.all({
         id
